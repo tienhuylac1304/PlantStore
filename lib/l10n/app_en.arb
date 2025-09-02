@@ -1,0 +1,11 @@
+{
+  "@@locale": "en",
+  "appTitle": "PlantStore",
+  "homeTitle":"Welcome to PlantStore!",
+  "indoorPlants":"Indoor",
+  "outdoorPlants":"Outdoor",
+  "home":"Home",
+  "favorites":"Favorites",
+  "cart":"Cart",
+  "profile":"Profile"
+}

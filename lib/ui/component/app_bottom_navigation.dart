@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:plant_store/commons/app_colors.dart';
 import 'package:plant_store/ui/pages/account_page.dart';
 import 'package:plant_store/ui/pages/cart_page.dart';
 import 'package:plant_store/ui/pages/category_page.dart';
 import 'package:plant_store/ui/pages/home_page.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class MainNavigation extends StatefulWidget {
   const MainNavigation({super.key});
@@ -14,8 +16,8 @@ class MainNavigation extends StatefulWidget {
 class _MainNavigationState extends State<MainNavigation> {
   int _currentIndex = 0;
 
-  final List<Widget> _pages = const [
-    HomePage(),
+  final List<Widget> _pages = [
+    PlantScreen(),
     CategoryPage(),
     CartPage(),
     AccountPage(),
@@ -28,24 +30,22 @@ class _MainNavigationState extends State<MainNavigation> {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         type: BottomNavigationBarType.fixed,
-        selectedItemColor: Colors.teal,
-        unselectedItemColor: Colors.grey,
         onTap: (index) {
           setState(() {
             _currentIndex = index;
           });
         },
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Trang chủ"),
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: AppLocalizations.of(context)!.home),
           BottomNavigationBarItem(
-            icon: Icon(Icons.local_florist),
-            label: "Danh mục",
+            icon: Icon(Icons.favorite),
+            label: AppLocalizations.of(context)!.favorites,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.shopping_cart),
-            label: "Giỏ hàng",
+            label: AppLocalizations.of(context)!.cart,
           ),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: "Tài khoản"),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: AppLocalizations.of(context)!.profile),
         ],
       ),
     );
