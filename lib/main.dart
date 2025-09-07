@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:plant_store/commons/app_theme.dart';
-import 'package:plant_store/model/plant.dart';
 import 'package:plant_store/supabase_config.dart';
 import 'package:plant_store/ui/component/app_bottom_navigation.dart';
-import 'package:plant_store/ui/pages/plant_detail_page.dart';
+// import 'package:plant_store/ui/pages/plant_detail_page.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -52,10 +51,7 @@ class PlantStoreApp extends StatelessWidget {
 
       // --- Navigation ---
       initialRoute: '/',
-      routes: {
-        '/': (context) => const MainNavigation(),
-        '/plant': (context) => const PlantDetailPage(),
-      },
+      routes: {'/': (context) => const MainNavigation()},
     );
   }
 }

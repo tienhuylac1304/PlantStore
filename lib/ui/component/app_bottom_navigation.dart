@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:plant_store/commons/app_colors.dart';
 import 'package:plant_store/ui/pages/account_page.dart';
 import 'package:plant_store/ui/pages/cart_page.dart';
 import 'package:plant_store/ui/pages/category_page.dart';

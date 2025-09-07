@@ -6,19 +6,25 @@ class PlantService {
 
   Future<List<Plant>> fetchPlants() async {
     try {
-      final response = await supabase.from('plants').select();
+      final List<dynamic> response = await supabase.from('plants').select();
 
       print('Supabase raw response: $response');
 
-      if (response is List) {
-        return response.map((json) => Plant.fromJson(json)).toList();
-      } else {
-        print("Unexpected response type: ${response.runtimeType}");
-        return [];
-      }
+      return response
+          .map((json) => Plant.fromJson(json as Map<String, dynamic>))
+          .toList();
     } catch (e) {
       print("Error fetching plants: $e");
       return [];
     }
+  }
+
+  Future<Plant?> fetchPlantDetail(String plantId) async {
+    final response =
+        await supabase.from('plants').select().eq('id', plantId).maybeSingle();
+
+    if (response == null) return null;
+
+    return Plant.fromJson(response);
   }
 }

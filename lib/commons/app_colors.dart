@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter/material.dart';
-
 class AppColors {
   // Core
   static const Color primary = Color(0xFFA6E6BE); // xanh ngọc nhạt

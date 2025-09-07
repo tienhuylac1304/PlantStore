@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:plant_store/model/plant.dart';
 
 class NameFormatter {
