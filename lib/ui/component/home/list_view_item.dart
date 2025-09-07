@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:plant_store/commons/app_colors.dart';
 import 'package:plant_store/commons/app_text_style.dart';
-import 'package:plant_store/helper/name_fomat.dart';
-import 'package:plant_store/helper/price_fomat.dart';
+import 'package:plant_store/helper/description_format.dart';
+import 'package:plant_store/helper/name_format.dart';
+import 'package:plant_store/helper/price_format.dart';
 import 'package:plant_store/model/plant.dart';
 import 'package:plant_store/ui/pages/plant_detail_page.dart';
 
@@ -27,7 +28,9 @@ class _ListViewPlantCardState extends State<ListViewPlantCard> {
           onTap: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (_) => PlantDetailPage()),
+              MaterialPageRoute(
+                builder: (_) => PlantDetailPage(plantId: widget.plant.id),
+              ),
             );
           },
           child: Container(
@@ -122,7 +125,7 @@ class _PlantInfo extends StatelessWidget {
         ),
         const SizedBox(height: 4),
         Text(
-          plant.shortDescription ?? "",
+          DescriptionFormatter.formatShortDescription(context, plant),
           style: Theme.of(context).textTheme.labelSmall,
         ),
 

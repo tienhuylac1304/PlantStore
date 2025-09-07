@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:plant_store/commons/app_colors.dart';
 import 'package:plant_store/model/plant.dart';
 import 'package:plant_store/service/plant_service.dart';
-import 'package:plant_store/ui/component/home/listview_item.dart';
+import 'package:plant_store/ui/component/home/list_view_item.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class PlantScreen extends StatefulWidget {

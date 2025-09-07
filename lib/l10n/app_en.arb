@@ -7,5 +7,9 @@
   "home":"Home",
   "favorites":"Favorites",
   "cart":"Cart",
-  "profile":"Profile"
+  "profile":"Profile",
+  "detail":"Detail",
+  "buyNow":"Buy it now",
+  "water":"Water",
+  "light":"Light"
 }

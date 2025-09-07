@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 class Plant {
   final String id;
   final String name;
@@ -12,7 +10,9 @@ class Plant {
   final int quantity;
   final bool isIndoor;
   final String? shortDescription;
+  final String? shortDescriptionVn;
   final String? longDescription;
+  final String? longDescriptionVn;
   final bool isActive;
   final DateTime createdAt;
 
@@ -28,7 +28,9 @@ class Plant {
     required this.quantity,
     required this.isIndoor,
     this.shortDescription,
+    this.shortDescriptionVn,
     this.longDescription,
+    this.longDescriptionVn,
     required this.isActive,
     required this.createdAt,
   });
@@ -47,7 +49,9 @@ class Plant {
       quantity: json['quantity'] as int,
       isIndoor: json['is_indoor'] as bool,
       shortDescription: json['short_description'] as String?,
+      shortDescriptionVn: json['short_description_vi'] as String?,
       longDescription: json['long_description'] as String?,
+      longDescriptionVn: json['long_description_vi'] as String?,
       isActive: json['is_active'] as bool,
       createdAt: DateTime.parse(json['created_at']),
     );
@@ -67,7 +71,9 @@ class Plant {
       'quantity': quantity,
       'is_indoor': isIndoor,
       'short_description': shortDescription,
+      'short_description_vi': shortDescriptionVn,
       'long_description': longDescription,
+      'long_description_vi': longDescriptionVn,
       'is_active': isActive,
       'created_at': createdAt.toIso8601String(),
     };
